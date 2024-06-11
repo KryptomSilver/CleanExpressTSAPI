@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/KryptomSilver/CleanExpressTSAPI#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mysql2": "^3.10.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
