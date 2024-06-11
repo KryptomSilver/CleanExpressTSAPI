@@ -1,0 +1,19 @@
+{
+  "name": "cleanexpresstsapi",
+  "version": "1.0.0",
+  "description": "This REST API contains advance functionalities using Express.js Framework and employs a clean architecture, TypeScript, and dependency injection without reflection.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KryptomSilver/CleanExpressTSAPI.git"
+  },
+  "author": "KryptomSilver",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KryptomSilver/CleanExpressTSAPI/issues"
+  },
+  "homepage": "https://github.com/KryptomSilver/CleanExpressTSAPI#readme"
+}
