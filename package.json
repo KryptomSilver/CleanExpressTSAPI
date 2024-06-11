@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/KryptomSilver/CleanExpressTSAPI/issues"
   },
-  "homepage": "https://github.com/KryptomSilver/CleanExpressTSAPI#readme"
+  "homepage": "https://github.com/KryptomSilver/CleanExpressTSAPI#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
 }
