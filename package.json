@@ -4,7 +4,10 @@
   "description": "This REST API contains advance functionalities using Express.js Framework and employs a clean architecture, TypeScript, and dependency injection without reflection.",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
   },
   "repository": {
     "type": "git",
