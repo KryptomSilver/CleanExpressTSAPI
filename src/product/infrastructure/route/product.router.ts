@@ -10,5 +10,9 @@ const productUseCase = new ProductUseCase(productMysqlRepository)
 const productCtrl = new ProductController(productUseCase)
 
 router.post("/", productCtrl.insertCtrl)
+router.get("/", productCtrl.getCtrl)
+router.get("/:idProduct", productCtrl.getByIdCtrl)
+router.put("/:idProduct", productCtrl.updateCtrl)
+router.delete("/:idProduct", productCtrl.deleteCtrl)
 
 export default router

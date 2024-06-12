@@ -27,7 +27,7 @@ class ProductMysqlRepository implements ProductRepository {
   async getProductById(idProduct: number): Promise<ProductEntity | null> {
     try {
       const [rows]: any = await pool.query(`SELECT * FROM products WHERE idProduct = ${idProduct};`)
-      return rows
+      return rows[0]
     } catch (error: any) {
       console.log("ERROR MYSQL REPOSITORY", error)
       return null
