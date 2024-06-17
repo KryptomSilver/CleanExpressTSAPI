@@ -1,12 +1,11 @@
-import UserEntity from "../domain/user.entity";
 import UserValue from "../domain/user.value";
-import UserMyqlRepository from "../infrastructure/user.mysql";
+import UserMyqlRepository from "../infrastructure/repository/user.mysql";
 
 class UserUseCase {
   constructor(private readonly userMysqlRepository: UserMyqlRepository) { }
 
-  public registerUser = async (user: UserEntity) => {
-    const userValue = new UserValue(user)
+  public registerUser = async (name: string, password: string) => {
+    const userValue = new UserValue({ name, password })
     const newUser = await this.userMysqlRepository.createUser(userValue)
     return newUser
   }
@@ -14,12 +13,12 @@ class UserUseCase {
     const users = await this.userMysqlRepository.getAllUsers()
     return users
   }
-  public fetchUser = async (idUser: number) => {
+  public fetchUserById = async (idUser: number) => {
     const user = await this.userMysqlRepository.getUserById(idUser)
     return user
   }
-  public modifyUser = async (idUser: number, user: UserEntity) => {
-    const userValue = new UserValue(user)
+  public modifyUserById = async (idUser: number, password: string, name: string) => {
+    const userValue = new UserValue({ name, password })
     const updatedUser = await this.userMysqlRepository.updateUser(idUser, userValue)
     return updatedUser
   }
