@@ -50,7 +50,7 @@ class UserMyqlRepository implements UserRepository {
       console.log("ERROR IN MYSQL REPOSITORY", error)
       return false
     }
-
   }
-
 }
+
+export default UserMyqlRepository
