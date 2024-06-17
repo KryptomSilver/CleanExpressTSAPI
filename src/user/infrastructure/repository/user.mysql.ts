@@ -1,6 +1,6 @@
-import { pool } from "../../database/mysql.config";
-import UserEntity from "../domain/user.entity";
-import UserRepository from "../domain/user.repository";
+import { pool } from "../../../database/mysql.config"
+import UserEntity from "../../domain/user.entity"
+import UserRepository from "../../domain/user.repository"
 
 class UserMyqlRepository implements UserRepository {
   async createUser(user: UserEntity): Promise<UserEntity | null> {
