@@ -31,6 +31,15 @@ class UserMyqlRepository implements UserRepository {
       return null
     }
   }
+  async getUserByName(nameUser: string): Promise<UserEntity | null> {
+    try {
+      const [rows]: any = await pool.query(`SELECT * FROM users WHERE name = '${nameUser}';`)
+      return rows[0]
+    } catch (error: any) {
+      console.log("ERROR IN MYSQL REPOSITORY", error)
+      return null
+    }
+  }
   async updateUser(idUser: number, user: UserEntity): Promise<UserEntity | null> {
     try {
       const [rows]: any = await pool.query(`UPDATE users 
