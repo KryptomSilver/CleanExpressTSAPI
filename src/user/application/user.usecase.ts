@@ -1,11 +1,16 @@
+import EncryptService from "../../authentication/application/services/encrypt.service";
 import UserValue from "../domain/user.value";
 import UserMyqlRepository from "../infrastructure/repository/user.mysql";
 
 class UserUseCase {
-  constructor(private readonly userMysqlRepository: UserMyqlRepository) { }
+  constructor(
+    private readonly userMysqlRepository: UserMyqlRepository,
+    private readonly encryptService: EncryptService
+  ) { }
 
   public registerUser = async (name: string, password: string) => {
-    const userValue = new UserValue({ name, password })
+    const passwordHashed = await this.encryptService.encryptPassword(password)
+    const userValue = new UserValue({ name, password: passwordHashed })
     const newUser = await this.userMysqlRepository.createUser(userValue)
     return newUser
   }
