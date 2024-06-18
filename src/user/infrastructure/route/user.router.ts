@@ -2,11 +2,13 @@ import { Router } from "express";
 import UserMyqlRepository from "../repository/user.mysql";
 import UserUseCase from "../../application/user.usecase";
 import UserController from "../controller/user.controller";
+import EncryptService from "../../../authentication/application/services/encrypt.service";
 
 const router = Router()
 
+const encryptService = new EncryptService()
 const userMysqlRepepository = new UserMyqlRepository()
-const userUseCase = new UserUseCase(userMysqlRepepository)
+const userUseCase = new UserUseCase(userMysqlRepepository, encryptService)
 const userController = new UserController(userUseCase)
 
 router.post("/", userController.insertCtrl)
